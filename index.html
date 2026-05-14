@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>California EV Adoption</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+
+<div style="text-align: center; margin-top: 20px;">
+    <svg width="50" height="50">
+        <circle cx="25" cy="25" r="20" fill="yellow" stroke="black" stroke-width="2" />
+        <circle cx="17" cy="20" r="2" fill="black" />
+        <circle cx="33" cy="20" r="2" fill="black" />
+        <path d="M 15 30 Q 25 40 35 30" stroke="black" stroke-width="2" fill="transparent" />
+    </svg>
+</div>
+
+<body>
+    <div class="container">
+        <h1>California EV Use by County</h1>
+        <p class="subtitle">EV use is popular amongst those in high-income, high-status counties.</p>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="yearSelect">Select Year</label>
+                <select id="yearSelect"></select>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <h2>County Comparison by Year</h2>
+            <div style="height: 300px;"><canvas id="barChart"></canvas></div>
+        </div>
+
+        <div class="chart-card">
+            <h2>California EV Sales Choropleth</h2>
+            <div id="map" style="height: 600px;"></div>
+        </div>
+
+        <div class="chart-card">
+            <div class="line-header">
+                <h2 id="lineChartTitle">County EV Growth Over Time</h2>
+                <select id="countySelect"></select>
+            </div>
+            <canvas id="lineChart"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
